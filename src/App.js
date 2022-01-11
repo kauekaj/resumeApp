@@ -2,6 +2,7 @@
 import React from 'react';
 import { StyleSheet, Text, View, Image } from 'react-native';
 import foto from './assets/kaue.jpg';
+import Icon from 'react-native-vector-icons/Feather'
 
 const App = () => {
   return (
@@ -11,10 +12,11 @@ const App = () => {
         <Image source={foto} style={styles.foto} />
         <Text style={styles.nome}>KAUÊ JACYNTHO</Text>
         <Text style={styles.funcao}>Desenvolvedor Mobile</Text>
-        <View>
-          <Text>Github</Text>
-          <Text>Facebook</Text>
-          <Text>LinkedIn</Text>
+        <View style={styles.redeSocial}>
+          <Icon name='github' />
+          <Icon name='facebook' />
+          <Icon name='linkedin' />
+       
         </View>
       </View>
     
@@ -51,6 +53,7 @@ const styles = StyleSheet.create({
     color: '#939393',
     marginBottom: 10
   }
+ 
 
 });
 
