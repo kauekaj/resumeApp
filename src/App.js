@@ -1,10 +1,26 @@
 
 import React from 'react';
-import { StyleSheet, Text, View, Image, SafeAreaView } from 'react-native';
+import { StyleSheet, Text, View, Image, Alert, TouchableOpacity } from 'react-native';
 import foto from './assets/kaue.jpg';
 import Icon from 'react-native-vector-icons/Feather'
 
 const App = () => {
+
+  function handleRedeSocial(redeSocial) {
+    switch(redeSocial) {
+      case 'github':
+        Alert.alert('Meu Github', 'https://github.com/kauekaj')
+      break
+      case 'facebook':
+        Alert.alert('Meu Facebook', 'https://www.facebook.com/kauekaj')
+      break
+      case 'linkedin':
+        Alert.alert('Meu LinkedIn', 'https://www.linkedin.com/in/kauekaj/')
+      break
+
+    }
+  }
+
   return (
     <>
     <View style={styles.page}>
@@ -13,9 +29,15 @@ const App = () => {
         <Text style={styles.nome}>KAUÊ JACYNTHO</Text>
         <Text style={styles.funcao}>Desenvolvedor Mobile</Text>
         <View style={styles.redeSocial}>
-          <Icon name='github' size={20} />
-          <Icon name='facebook' size={20} />
-          <Icon name='linkedin' size={20} />
+          <TouchableOpacity onPress={()=> handleRedeSocial('github')}>
+            <Icon name='github' size={20} />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={()=> handleRedeSocial('facebook')}>
+            <Icon name='facebook' size={20} />
+          </TouchableOpacity>
+          <TouchableOpacity onPress={()=> handleRedeSocial('linkedin')}>
+            <Icon name='linkedin' size={20} />
+          </TouchableOpacity>
         </View>
       </View>
     
@@ -82,7 +104,7 @@ const styles = StyleSheet.create({
   redeSocial: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    width: '40%',
+    width: '50%',
     marginTop: 15
   },
 
